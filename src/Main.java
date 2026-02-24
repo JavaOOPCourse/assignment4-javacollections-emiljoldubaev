@@ -9,8 +9,13 @@ public class Main {
         AppointmentService appointmentService = new AppointmentService();
         IssueService issueService = new IssueService();
         ActionHistoryService actionService = new ActionHistoryService();
+        studentService.initializeStudents();
+        appointmentService.initializeAppointments();
+        issueService.initializeIssues();
+        actionService.initializeActions();
 
         Scanner scanner = new Scanner(System.in);
+
         int choice;
 
         do {
@@ -28,22 +33,27 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    // TODO
+                    studentService.printStudents();
                     break;
                 case 2:
                     // TODO
+                    appointmentService.printAppointments();
                     break;
                 case 3:
                     // TODO
+                    issueService.printRemainingIssues();
                     break;
                 case 4:
                     // TODO
+                    actionService.printHistory();
                     break;
                 case 5:
                     // TODO
+                    issueService.addNewIssue("blah blah blh",3);
                     break;
                 case 6:
                     // TODO
+                    actionService.undoLastAction();
                     break;
                 case 7:
                     System.out.println("Exiting... 👋");
